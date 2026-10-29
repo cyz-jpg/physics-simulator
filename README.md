@@ -1,27 +1,53 @@
-# Physics simulator
+# Physics Engine
 
-## Benodigdheden
+A 3D physics engine built with C++ and OpenGL.
 
-Voor deze physics simulator zijn de volgende libraries en tools nodig:
+## Features
 
-- **SFML 3**
-  - SFML Graphics
-  - SFML Window
-  - SFML System
-- Een C++17-compatibele compiler, zoals `g++`
-- GNU Make
+- OpenGL rendering
+- Physics simulation in development
 
-## Bouwen en uitvoeren
+## Technologies
 
-Zorg dat SFML 3 op het systeem is geïnstalleerd en voer daarna uit:
+- C++
+- OpenGL
+- GLFW
+- GLAD
+- GLM
+- CMake
+- vcpkg
+
+## Getting Started
+
+### Requirements
+
+- A C++ compiler
+- CMake
+- Git
+- vcpkg
+
+### Build
+
+Clone the repository:
 
 ```bash
-make
-make run
+git clone <repository-url>
+cd physics-simulator
 ```
 
-Om de gegenereerde executable te verwijderen:
+Install dependencies:
 
 ```bash
-make clean
+vcpkg install
 ```
+
+Configure and build the project:
+
+```bash
+cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE="<path-to-vcpkg>/scripts/buildsystems/vcpkg.cmake"
+cmake --build build --config Debug
+```
+
+## Project Status
+
+Early development.

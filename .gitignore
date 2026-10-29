@@ -1,0 +1,29 @@
+
+# Build output
+/build/
+/out/
+/cmake-build-*/
+
+# vcpkg dependencies installed locally
+/vcpkg_installed/
+
+# Visual Studio
+/.vs/
+
+# Compiled files
+*.exe
+*.dll
+*.obj
+*.pdb
+*.ilk
+*.lib
+
+# VS Code user-specific settings
+/.vscode/*
+!/.vscode/extensions.json
+!/.vscode/launch.json
+!/.vscode/tasks.json
+
+# OS files
+.DS_Store
+Thumbs.db
