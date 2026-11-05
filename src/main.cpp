@@ -25,9 +25,10 @@ int main(){
         return -1;
     }
 
+    glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+
     while (!glfwWindowShouldClose(window)) {
         glClear(GL_COLOR_BUFFER_BIT);
-        glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 
         // Rendering code goes here
 

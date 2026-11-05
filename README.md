@@ -23,7 +23,7 @@ A 3D physics engine built with C++ and OpenGL.
 - A C++17-compatible compiler
 - CMake 3.20 or newer
 - Git
-- GLFW 3.5 or newer
+- GLFW 3.5.1 or newer
 - GLM 1.0.3
 - GLAD 2.x
 
