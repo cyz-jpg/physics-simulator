@@ -28,9 +28,19 @@ FetchContent_MakeAvailable(glfw glm)
 
 find_package(OpenGL REQUIRED)
 
+file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS
+    "${CMAKE_SOURCE_DIR}/src/*.cpp"
+)
+
 add_executable(physics_simulator
-    "${CMAKE_SOURCE_DIR}/src/main.cpp"
+    ${SOURCES}
     "${CMAKE_SOURCE_DIR}/dependencies/glad/src/gl.c"
+)
+
+file(TO_CMAKE_PATH "${CMAKE_SOURCE_DIR}" PHYSICS_SIMULATOR_PROJECT_ROOT)
+
+target_compile_definitions(physics_simulator PRIVATE
+    "PHYSICS_SIMULATOR_PROJECT_ROOT=\"${PHYSICS_SIMULATOR_PROJECT_ROOT}\""
 )
 
 target_include_directories(physics_simulator PRIVATE
