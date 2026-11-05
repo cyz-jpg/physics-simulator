@@ -3,6 +3,13 @@
 /build/
 /out/
 /cmake-build-*/
+/CMakeFiles/
+/CMakeCache.txt
+/cmake_install.cmake
+/compile_commands.json
+/build.ninja
+/.ninja_deps
+/.ninja_log
 
 # vcpkg dependencies installed locally
 /vcpkg_installed/
@@ -18,11 +25,12 @@
 *.ilk
 *.lib
 
-# VS Code user-specific settings
+# VS Code user-specific and generated files
 /.vscode/*
 !/.vscode/extensions.json
 !/.vscode/launch.json
 !/.vscode/tasks.json
+*.code-workspace
 
 # OS files
 .DS_Store

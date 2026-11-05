@@ -1,19 +1,21 @@
-cmake_minimum_required(VERSION 3.25)
-project(PhysicsEngine LANGUAGES CXX)
+cmake_minimum_required(VERSION 3.20)
 
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+project(physics_simulator VERSION 1.0 LANGUAGES C CXX)
 
-find_package(glfw3 CONFIG REQUIRED)
-find_package(glad CONFIG REQUIRED)
+add_executable(physics_simulator
+    "${CMAKE_SOURCE_DIR}/src/main.cpp"
+    "${CMAKE_SOURCE_DIR}/dependencies/glad/src/gl.c"
+)
+
+target_include_directories(physics_simulator PRIVATE
+    "${CMAKE_SOURCE_DIR}/include"
+    "${CMAKE_SOURCE_DIR}/dependencies/glad/include"
+)
+
+find_package(glfw3 3.5 REQUIRED)
 find_package(glm CONFIG REQUIRED)
-find_package(OpenGL REQUIRED)
 
-add_executable(PhysicsEngine main.cpp)
-
-target_link_libraries(PhysicsEngine PRIVATE
+target_link_libraries(physics_simulator PRIVATE
     glfw
-    glad::glad
     glm::glm
-    OpenGL::GL
 )

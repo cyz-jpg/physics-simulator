@@ -1,4 +1,4 @@
-# Physics Engine
+# Physics Simulator
 
 A 3D physics engine built with C++ and OpenGL.
 
@@ -15,36 +15,36 @@ A 3D physics engine built with C++ and OpenGL.
 - GLAD
 - GLM
 - CMake
-- vcpkg
 
 ## Getting Started
 
 ### Requirements
 
-- A C++ compiler
-- CMake
+- A C++17-compatible compiler
+- CMake 3.20 or newer
 - Git
-- vcpkg
+- GLFW 3.5 or newer
+- GLM 1.0.3
+- GLAD 2.x
+
+GLFW and GLM must be available to CMake through `find_package`. The generated
+GLAD 2 files must be present in the repository at:
+
+```text
+dependencies/glad/
+```
+
+The expected GLAD layout includes `dependencies/glad/include/glad/gl.h` and
+`dependencies/glad/src/gl.c`.
 
 ### Build
 
-Clone the repository:
+Clone the repository and configure it:
 
 ```bash
 git clone <repository-url>
 cd physics-simulator
-```
-
-Install dependencies:
-
-```bash
-vcpkg install
-```
-
-Configure and build the project:
-
-```bash
-cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE="<path-to-vcpkg>/scripts/buildsystems/vcpkg.cmake"
+cmake -B build -S .
 cmake --build build --config Debug
 ```
 
