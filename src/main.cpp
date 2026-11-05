@@ -3,7 +3,7 @@
 int main(){
     std::cout << "Starting Physics Simulator..." << std::endl;
     
-        GLFWwindow* window;
+    GLFWwindow* window;
 
     if (!glfwInit()) {
         std::cout << "Failed to initialize GLFW" << std::endl;
@@ -18,7 +18,20 @@ int main(){
         return -1;
     }
 
-    while(! glfwWindowShouldClose(window)) {
+    glfwMakeContextCurrent(window);
+
+    if (!gladLoadGL(reinterpret_cast<GLADloadfunc>(glfwGetProcAddress))) {
+        std::cerr << "Failed to initialize GLAD" << std::endl;
+        return -1;
+    }
+
+    while (!glfwWindowShouldClose(window)) {
+        glClear(GL_COLOR_BUFFER_BIT);
+        glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+
+        // Rendering code goes here
+
+        glfwSwapBuffers(window);
         glfwPollEvents();
     }
 
