@@ -27,7 +27,6 @@ A 3D physics engine built with C++ and OpenGL.
 - GLM 1.0.3
 - GLAD 2.x
 
-GLFW and GLM must be available to CMake through `find_package`. The generated
 GLAD 2 files must be present in the repository at:
 
 ```text
