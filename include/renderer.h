@@ -11,6 +11,7 @@ class Renderer {
         unsigned int viewLoc;
         unsigned int projLoc;
         unsigned int modelLoc;
+        unsigned int shaderProgramLoc;
         std::vector<Mesh*> meshes;
     public:
         void addMesh(Mesh* mesh);

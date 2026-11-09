@@ -34,10 +34,9 @@ int main(){
     Camera camera(
         glm::vec3(0.0f, 0.0f, 5.0f), // Start position
         -90.0f,                     // Start theta
-        0.0f,                       // Start phi
-        90.0f,                      // Rotation speed
-        5.0f                        // Start radius
+        -0.0f                       // Start phi
     );
+    camera.initMouse(window);
 
     // to test
     // Each group of three vertices is one triangle.
@@ -64,7 +63,7 @@ int main(){
         -0.5f, -0.5f, -0.5f,
          0.0f,  0.5f,  0.0f
     };
-
+    
     std::vector<glm::vec3> pyramidColors = {
         // Bottom
         glm::vec3(0.7f, 0.7f, 0.7f),
@@ -88,6 +87,10 @@ int main(){
         glm::vec3(1.0f, 1.0f, 0.0f),
         glm::vec3(1.0f, 1.0f, 0.0f)
     };
+
+    for (auto &v : pyramidVertices) {
+        v += 0.0f;
+    }
 
     Mesh* pyramid = new Mesh(pyramidVertices, 18, pyramidColors);
 
